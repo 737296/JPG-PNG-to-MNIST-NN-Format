@@ -21,8 +21,9 @@ for name in Names:
 	shuffle(FileList) # Usefull for further segmenting the validation set
 
 	for filename in FileList:
-
-		label = int(filename.split('/')[2])
+		print(FileList)
+		print(filename)
+		label = int(filename.split('\\')[1])
 
 		Im = Image.open(filename)
 
@@ -69,5 +70,8 @@ for name in Names:
 # gzip resulting files
 
 for name in Names:
-	os.system('gzip '+name[1]+'-images-idx3-ubyte')
-	os.system('gzip '+name[1]+'-labels-idx1-ubyte')
+
+	#os.system('gzip '+name[1]+'-images-idx3-ubyte')
+	print('gzip '+name[1]+'-images-idx3-ubyte')
+	#os.system('gzip '+name[1]+'-labels-idx1-ubyte')
+	print('gzip '+name[1]+'-labels-idx1-ubyte')
